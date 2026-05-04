@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text and Number Analyzer</title>
+    <style>
+        body{
+            font-family:Arial;
+            background:#f0f8ff;
+            padding:40px;
+        }
+
+        .box{
+            background:white;
+            padding:30px;
+            width:500px;
+            margin:auto;
+            border-radius:10px;
+            box-shadow:0 0 10px gray;
+        }
+
+        input,button{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+        }
+
+        button{
+            background:blue;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Text and Number Analyzer</h2>
+
+    <form method="POST">
+        <input type="number" name="number" placeholder="Enter number" required>
+        <input type="text" name="text" placeholder="Enter text" required>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if result %}
+        <hr>
+        <h3>Output</h3>
+        <p><b>Even/Odd:</b> {{ result.even_odd }}</p>
+        <p><b>Prime:</b> {{ result.prime }}</p>
+        <p><b>Reverse Number:</b> {{ result.reverse_number }}</p>
+        <p><b>Vowel Count:</b> {{ result.vowel_count }}</p>
+        <p><b>Uppercase:</b> {{ result.upper }}</p>
+        <p><b>Lowercase:</b> {{ result.lower }}</p>
+        <p><b>Reverse Text:</b> {{ result.reverse_text }}</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
